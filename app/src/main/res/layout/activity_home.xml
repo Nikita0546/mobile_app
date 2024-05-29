@@ -12,9 +12,9 @@
         android:layout_height="50dp"
         android:layout_marginTop="160dp"
         android:onClick="Klik"
-        android:text="Слад"
+        android:text="Клиенты"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
         android:onClick="Kliked"
-        android:text="Заказы"
+        android:text="Заявки"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />

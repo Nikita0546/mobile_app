@@ -15,6 +15,7 @@ public class UserActivity extends AppCompatActivity {
 
     EditText nameBox;
     EditText carBox;
+    EditText tachBox;
     Button delButton;
     Button saveButton;
 
@@ -29,6 +30,7 @@ public class UserActivity extends AppCompatActivity {
 
         nameBox = findViewById(R.id.name);
         carBox = findViewById(R.id.car);
+        tachBox = findViewById(R.id.tach);
         delButton = findViewById(R.id.deleteButton);
         saveButton = findViewById(R.id.saveButton);
 
@@ -46,7 +48,8 @@ public class UserActivity extends AppCompatActivity {
                     DatabaseHelper.COLUMN_ID + "=?", new String[]{String.valueOf(userId)});
             userCursor.moveToFirst();
             nameBox.setText(userCursor.getString(1));
-            carBox.setText(String.valueOf(userCursor.getInt(2)));
+            carBox.setText(userCursor.getString(2));
+            tachBox.setText(userCursor.getString(3));
             userCursor.close();
         } else {
             // скрываем кнопку удаления
@@ -57,7 +60,8 @@ public class UserActivity extends AppCompatActivity {
     public void save(View view){
         ContentValues cv = new ContentValues();
         cv.put(DatabaseHelper.COLUMN_NAME, nameBox.getText().toString());
-        cv.put(DatabaseHelper.COLUMN_TRANSPORT, Integer.parseInt(carBox.getText().toString()));
+        cv.put(DatabaseHelper.COLUMN_TRANSPORT, carBox.getText().toString());
+        cv.put(DatabaseHelper.COLUMN_TACHOGRAPH, tachBox.getText().toString());
 
         if (userId > 0) {
             db.update(DatabaseHelper.TABLE, cv, DatabaseHelper.COLUMN_ID + "=" + userId, null);

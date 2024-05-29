@@ -45,10 +45,10 @@ public class ItemsActivity extends AppCompatActivity{
         //получаем данные из бд в виде курсора
         userCursor = db.rawQuery("select * from " + DatabaseHelper.TABLE, null);
         // определяем, какие столбцы из курсора будут выводиться в ListView
-        String[] headers = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_TRANSPORT};
+        String[] headers = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_TRANSPORT, DatabaseHelper.COLUMN_TACHOGRAPH};
         // создаем адаптер, передаем в него курсор
         userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
-                userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
+                userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2, }, 0);
         userList.setAdapter(userAdapter);
     }
 
