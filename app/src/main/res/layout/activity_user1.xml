@@ -1,54 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".UserActivity1">
     <EditText
         android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Введите название имя"
-        app:layout_constraintBottom_toTopOf="@+id/car"
+        app:layout_constraintBottom_toTopOf="@+id/Number"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
-
     <EditText
-        android:id="@+id/car"
+        android:id="@+id/Number"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Введите транспорт"
+        android:hint="Введите номер"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/tach"
+        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name"
         tools:ignore="HardcodedText" />
+
     <EditText
-        android:id="@+id/tach"
+        android:id="@+id/line"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Введите тахограф"
+        android:hint="Введите заявку"
         android:minHeight="48dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/car"
+        app:layout_constraintTop_toBottomOf="@+id/Number"
         tools:ignore="HardcodedText" />
     <EditText
-        android:id="@+id/maps"
+        android:id="@+id/line1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Введите карту"
+        android:hint="Введите описание"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tach"
+        app:layout_constraintTop_toBottomOf="@+id/line"
         tools:ignore="HardcodedText" />
     <Button
         android:id="@+id/saveButton"
@@ -57,7 +56,7 @@
         android:text="Сохранить"
         android:onClick="save"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintTop_toBottomOf="@+id/maps"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/deleteButton"
         tools:ignore="HardcodedText" />
@@ -68,8 +67,9 @@
         android:text="Удалить"
         android:onClick="delete"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintTop_toBottomOf="@+id/maps"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
         app:layout_constraintLeft_toRightOf="@+id/saveButton"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="HardcodedText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@
         android:layout_width="410dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:onClick="Kliked"
+        android:onClick="Kliktwo"
         android:text="Заявки"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

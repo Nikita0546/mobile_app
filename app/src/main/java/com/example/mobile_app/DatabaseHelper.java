@@ -8,11 +8,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "point.db"; // название бд
     private static final int SCHEMA = 1; // версия базы данных
     static final String TABLE = "client"; // название таблицы в бд
+    static final String TABLE1 = "request";
     // названия столбцов
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_TRANSPORT = "transport";
     public static final String COLUMN_TACHOGRAPH="tachograph";
+    public static final String COLUMN_MAP="MAP";
+    public static final String COLUMN_NUMBER="number";
+    public static final String COLUMN_LINE="LINE";
+    public static final String COLUMN_LINE1="LINE1";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, SCHEMA);
@@ -23,14 +28,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE client (" + COLUMN_ID
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME
-                + " TEXT, " + COLUMN_TRANSPORT + " TEXT, " + COLUMN_TACHOGRAPH + " TEXT);");
-        // добавление начальных данных
-        db.execSQL("INSERT INTO "+ TABLE +" (" + COLUMN_NAME
-                + ", " + COLUMN_TRANSPORT  + ", " + COLUMN_TACHOGRAPH + ") VALUES ('Иванов И. И.', 'VOLVO F16', 'Drive Smart');");
+                + " TEXT, " + COLUMN_TRANSPORT + " TEXT, " + COLUMN_TACHOGRAPH
+                + " TEXT, " + COLUMN_MAP + " TEXT);");
+        db.execSQL("CREATE TABLE request (" +COLUMN_ID
+                + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME
+                + " TEXT, " + COLUMN_NUMBER + " TEXT, " + COLUMN_LINE
+                + " TEXT, " + COLUMN_LINE1 + " TEXT)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,  int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+TABLE1);
         onCreate(db);
     }
 }

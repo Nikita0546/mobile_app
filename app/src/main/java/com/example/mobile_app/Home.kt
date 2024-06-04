@@ -15,4 +15,8 @@ class Home : AppCompatActivity() {
         val engIntent = Intent(this, ItemsActivity::class.java)
         startActivity(engIntent)
     }
+    fun Kliktwo(view: View) {
+        val engIntent = Intent(this, ItemsActivity1::class.java)
+        startActivity(engIntent)
+    }
 }

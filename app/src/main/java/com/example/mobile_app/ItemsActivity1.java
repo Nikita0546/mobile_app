@@ -3,15 +3,15 @@ package com.example.mobile_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.SimpleCursorAdapter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
-public class ItemsActivity extends AppCompatActivity{
+public class ItemsActivity1 extends AppCompatActivity{
     ListView userList;
     DatabaseHelper databaseHelper;
     SQLiteDatabase db;
@@ -21,13 +21,13 @@ public class ItemsActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_items);
+        setContentView(R.layout.activity_items1);
 
         userList = findViewById(R.id.list);
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), UserActivity.class);
+                Intent intent = new Intent(getApplicationContext(), UserActivity1.class);
                 intent.putExtra("id", id);
                 startActivity(intent);
             }
@@ -43,9 +43,9 @@ public class ItemsActivity extends AppCompatActivity{
         db = databaseHelper.getReadableDatabase();
 
         //получаем данные из бд в виде курсора
-        userCursor = db.rawQuery("select * from  " + DatabaseHelper.TABLE, null);
+        userCursor = db.rawQuery("select * from " + DatabaseHelper.TABLE1, null);
         // определяем, какие столбцы из курсора будут выводиться в ListView
-        String[] headers = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_TRANSPORT};
+        String[] headers = new String[]{DatabaseHelper.COLUMN_NAME, DatabaseHelper.COLUMN_NUMBER};
         // создаем адаптер, передаем в него курсор
         userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
                 userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2, }, 0);
@@ -54,7 +54,7 @@ public class ItemsActivity extends AppCompatActivity{
 
     // по нажатию на кнопку запускаем UserActivity для добавления данных
     public void add(View view) {
-        Intent intent = new Intent(this, UserActivity.class);
+        Intent intent = new Intent(this, UserActivity1.class);
         startActivity(intent);
     }
 
