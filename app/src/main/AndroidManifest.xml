@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Mobile_app"
         tools:targetApi="31">
         <activity
+            android:name=".UserEmploye"
+            android:exported="false" />
+        <activity
+            android:name=".ItemsEmploye"
+            android:exported="false" />
+        <activity
             android:name=".UserActivity1"
             android:exported="false" />
         <activity

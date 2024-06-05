@@ -19,4 +19,8 @@ class Home : AppCompatActivity() {
         val engIntent = Intent(this, ItemsActivity1::class.java)
         startActivity(engIntent)
     }
+    fun klikone(view: View) {
+        val engIntent = Intent(this, ItemsEmploye::class.java)
+        startActivity(engIntent)
+    }
 }

@@ -9,6 +9,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int SCHEMA = 1; // версия базы данных
     static final String TABLE = "client"; // название таблицы в бд
     static final String TABLE1 = "request";
+    static final String TABLE2 = "Employee";
     // названия столбцов
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
@@ -16,6 +17,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_TACHOGRAPH="tachograph";
     public static final String COLUMN_MAP="MAP";
     public static final String COLUMN_NUMBER="number";
+    public static final String COLUMN_SALARY="Salary";
+    public static final String COLUMN_POST="post";
     public static final String COLUMN_LINE="LINE";
     public static final String COLUMN_LINE1="LINE1";
 
@@ -34,6 +37,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME
                 + " TEXT, " + COLUMN_NUMBER + " TEXT, " + COLUMN_LINE
                 + " TEXT, " + COLUMN_LINE1 + " TEXT)");
+        db.execSQL("CREATE TABLE Employee(" + COLUMN_ID
+                + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_NAME
+                + "TEXT," +COLUMN_POST + "TEXT," + COLUMN_SALARY
+                + "TEXT," + COLUMN_LINE + "TEXT)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,  int newVersion) {
