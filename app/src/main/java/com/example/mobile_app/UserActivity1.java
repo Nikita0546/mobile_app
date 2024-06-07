@@ -25,7 +25,6 @@ public class UserActivity1 extends AppCompatActivity {
     SQLiteDatabase db;
     Cursor userCursor;
     long userId=0;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,7 @@ public class UserActivity1 extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            userId = extras.getLong("id");
+            userId = extras.getLong("_id");
         }
         // если 0, то добавление
         if (userId > 0) {

@@ -5,6 +5,60 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserEmploye">
+    tools:context=".UserEmploye"
+    android:orientation="vertical"
+    android:background="#201E28">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Введите ФИО"
+        android:textColorHint="#6a6a6a"
+        android:textColor="#fdfdfd"
+        app:layout_constraintBottom_toTopOf="@+id/posts"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+    <EditText
+        android:id="@+id/posts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ведите должность"
+        android:textColorHint="#6a6a6a"
+        android:textColor="#fdfdfd"
+        android:minHeight="48dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        tools:ignore="HardcodedText"/>
+    <Button
+        android:id="@+id/saveButton1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Сохранить"
+        android:onClick="save1"
+        android:textColor="#5e4602"
+        android:backgroundTint="#e2a600"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/posts"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/deleteButton1"
+        tools:ignore="HardcodedText" />
+    <Button
+        android:id="@+id/deleteButton1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Удалить"
+        android:onClick="delete1"
+        android:textColor="#5e4602"
+        android:backgroundTint="#e2a600"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@+id/posts"
+        app:layout_constraintLeft_toRightOf="@+id/saveButton1"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

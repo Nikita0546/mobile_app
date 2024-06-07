@@ -15,11 +15,11 @@ class Home : AppCompatActivity() {
         val engIntent = Intent(this, ItemsActivity::class.java)
         startActivity(engIntent)
     }
-    fun Kliktwo(view: View) {
+    fun Kliked(view: View) {
         val engIntent = Intent(this, ItemsActivity1::class.java)
         startActivity(engIntent)
     }
-    fun klikone(view: View) {
+    fun klikemp(view: View) {
         val engIntent = Intent(this, ItemsEmploye::class.java)
         startActivity(engIntent)
     }

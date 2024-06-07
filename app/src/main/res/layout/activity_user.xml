@@ -12,7 +12,7 @@
         android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Введите имя"
+        android:hint="Введите ФИО"
         android:textColorHint="#6a6a6a"
         android:textColor="#fdfdfd"
         app:layout_constraintBottom_toTopOf="@+id/car"
